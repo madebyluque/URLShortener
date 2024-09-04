@@ -1,0 +1,33 @@
+services:
+  urlshortener.api:
+    image: ${DOCKER_REGISTRY-}urlshortenerapi
+    build:
+      context: .
+      dockerfile: URLShortener.API/Dockerfile
+    depends_on:
+      - cache
+      - db
+    networks:
+      - shortener-network
+
+  cache:
+    image: redis
+    command: redis-server --requirepass Redis2024!
+    ports:
+      - "6379:6379"
+    networks:
+      - shortener-network
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "Postgres2024!"
+      POSTGRES_DB: "UriShortener"
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    networks:
+      - shortener-network
+
+networks:
+  shortener-network:
