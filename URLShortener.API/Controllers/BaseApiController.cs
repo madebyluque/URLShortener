@@ -37,7 +37,7 @@ public abstract class BaseApiController(NotificationContext notificationContext,
         return Ok(result);
     }
 
-    protected IActionResult CustomRedirectResponse(object result)
+    protected IActionResult CustomRedirectResponse(RequestResult result)
     {
         if (_notificationContext.HasNotifications)
         {
@@ -56,7 +56,7 @@ public abstract class BaseApiController(NotificationContext notificationContext,
             return new NotFoundResult();
         }
 
-        return Redirect(result.ToString());
+        return Redirect(result.Value.ToString());
     }
 
     protected IActionResult CustomCreatedResponse(RequestResult result, string routeName)

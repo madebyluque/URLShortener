@@ -23,6 +23,6 @@ public class ShortenerController(NotificationContext notificationContext, IMedia
     {
         var query = new GetLinkQuery(id);
         var result = await _mediator.Send(query);
-        return CustomRedirectResponse(result.Value);
+        return CustomRedirectResponse(result);
     }
 }
