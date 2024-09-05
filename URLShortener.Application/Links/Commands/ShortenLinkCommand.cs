@@ -21,7 +21,6 @@ public class ShortenLinkCommandValidator : Validator<ShortenLinkCommand>
     public ShortenLinkCommandValidator()
     {
         RuleFor(x => x.Address)
-            .NotEmpty()
-            .Must(x => x.AbsolutePath.Length < 255);
+            .NotEmpty();
     }
 }

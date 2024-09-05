@@ -53,7 +53,7 @@ public abstract class BaseApiController(NotificationContext notificationContext,
 
         if (result == null)
         {
-            return BadRequest();
+            return new NotFoundResult();
         }
 
         return Redirect(result.ToString());

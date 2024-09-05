@@ -20,6 +20,7 @@ public class ShortenLinkCommandHandler(ILinksRepository linksRepository,
             return null;
         }
 
+        // TODO: search link in cache
         var existentLink = await _linksRepository.GetLinkByAddress(request.Address);
 
         if (existentLink != null)

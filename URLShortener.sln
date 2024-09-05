@@ -7,11 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLShortener.API", "URLShor
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BEBDFC4B-0345-45E7-90C1-3E1C263103B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLShortener.Domain", "URLShortener.Domain\URLShortener.Domain.csproj", "{BDB4062C-091B-4632-AE82-D28D212F0CF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLShortener.Domain", "URLShortener.Domain\URLShortener.Domain.csproj", "{BDB4062C-091B-4632-AE82-D28D212F0CF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLShortener.Infrastructure", "URLShortener.Infrastructure\URLShortener.Infrastructure.csproj", "{387C5720-AC56-4EC2-BB90-B5D51C4644F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLShortener.Infrastructure", "URLShortener.Infrastructure\URLShortener.Infrastructure.csproj", "{387C5720-AC56-4EC2-BB90-B5D51C4644F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLShortener.Application", "URLShortener.Application\URLShortener.Application.csproj", "{E624ACAF-E750-4202-8DD9-95BA1EB43014}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLShortener.Application", "URLShortener.Application\URLShortener.Application.csproj", "{E624ACAF-E750-4202-8DD9-95BA1EB43014}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLShortener.UnitTests", "URLShortener.UnitTests\URLShortener.UnitTests.csproj", "{33E216AE-C7BF-4CE6-82F2-A36A86647009}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{710D5010-3DA6-49D4-A487-69FF2EF7AF3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +43,16 @@ Global
 		{E624ACAF-E750-4202-8DD9-95BA1EB43014}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E624ACAF-E750-4202-8DD9-95BA1EB43014}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E624ACAF-E750-4202-8DD9-95BA1EB43014}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33E216AE-C7BF-4CE6-82F2-A36A86647009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E216AE-C7BF-4CE6-82F2-A36A86647009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E216AE-C7BF-4CE6-82F2-A36A86647009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E216AE-C7BF-4CE6-82F2-A36A86647009}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{33E216AE-C7BF-4CE6-82F2-A36A86647009} = {710D5010-3DA6-49D4-A487-69FF2EF7AF3A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5934C0D1-B5E0-4B88-A88E-FBD0C371B1B0}

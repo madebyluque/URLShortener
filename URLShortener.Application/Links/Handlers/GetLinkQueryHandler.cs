@@ -36,7 +36,7 @@ public class GetLinkQueryHandler(ILinksRepository linksRepository,
 
         if (link == null)
         {
-            _notificationContext.AddNotification("Link", "It was not possible to find the associated URI"); // TODO: add resource translation
+            _notificationContext.AddNotification("Link", "It was not possible to find the associated URI");
             return null;
         }
 
