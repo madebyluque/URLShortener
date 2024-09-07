@@ -11,21 +11,25 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddControllers();
-        builder.Services.AddEndpointsApiExplorer();
+        var services = builder.Services;
 
-        builder.Services.AddConfiguredSwagger();
-        builder.Services.AddScoped<NotificationContext>();
+        services.ConfigureCors();
+
+        services.AddControllers();
+        services.AddEndpointsApiExplorer();
+        services.AddConfiguredSwagger();
+
+        services.AddScoped<NotificationContext>();
         InfrastructureDataModule.Register(builder.Services, builder.Configuration);
         FluentValidationsExtension.AddFluentValidation(builder.Services);
         VersioningExtension.AddVersioning(builder.Services);
-        builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ShortenLinkCommandHandler).Assembly));
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ShortenLinkCommandHandler).Assembly));
 
         var app = builder.Build();
 
+        app.UseConfiguredCors();
         app.UseConfiguredSwagger();
-
-        app.UseHttpsRedirection();
+        // app.UseHttpsRedirection();
         app.UseAuthorization();
         app.MapControllers();
 

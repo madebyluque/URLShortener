@@ -78,9 +78,10 @@ public abstract class BaseApiController(NotificationContext notificationContext,
             return BadRequest();
         }
 
+        // TODO: create a file for it
         var response = new
         {
-            Link = Url.Link(routeName, new { id = result.Value })
+            Address = Url.Link(routeName, new { id = result.Value })
         };
 
         return CreatedAtRoute(routeName, new
