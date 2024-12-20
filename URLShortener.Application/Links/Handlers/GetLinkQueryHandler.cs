@@ -40,6 +40,8 @@ public class GetLinkQueryHandler(ILinksRepository linksRepository,
             return null;
         }
 
+        await _cacheService.SetAsync(new LinkCacheEntry(link));
+
         return new RequestResult(link.Address);
     }
 }

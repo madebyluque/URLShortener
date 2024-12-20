@@ -84,6 +84,7 @@ public class GetLinkQueryHandlerTests
         // Assert
         Assert.Equal(link.Address, result.Value);
         _cacheService.Verify(x => x.GetAsync<Link>(It.Is<LinkCacheKey>(x => x.Key == $"{nameof(Link)}-{link.Id}")), Times.Once);
+        _cacheService.Verify(x => x.SetAsync(It.IsAny<LinkCacheEntry>()), Times.Once);
         _linksRepository.Verify(x => x.GetLinkById(link.Id), Times.Once);
     }
 }
